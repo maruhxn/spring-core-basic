@@ -1,9 +1,12 @@
 package com.study.springcore.member;
 
 public class MemberServiceImpl implements MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
-    // 추상화에도 의존하고, 구체화에도 의존하고 있음.. => DIP 위반
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
     @Override
     public void join(Member member) {
         memberRepository.saev(member);
