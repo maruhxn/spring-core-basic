@@ -5,14 +5,14 @@ import com.study.springcore.member.Grade;
 import com.study.springcore.member.Member;
 import com.study.springcore.member.MemberService;
 import com.study.springcore.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class OrderServiceTest {
     MemberService memberService = new MemberServiceImpl();
     OrderService orderService = new OrderServiceImpl();
+
     @Test
     void createOrder() {
         // Given
@@ -24,6 +24,6 @@ class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
 
         // Then
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+        assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
 }
