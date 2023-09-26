@@ -2,6 +2,7 @@ package com.study.springcore.discount;
 
 import com.study.springcore.member.Grade;
 import com.study.springcore.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
